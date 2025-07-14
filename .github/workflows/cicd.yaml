@@ -22,10 +22,9 @@ jobs:
     - name: Set up Cloud SDK (gcloud CLI)
       uses: 'google-github-actions/setup-gcloud@v2'
 
-    - name: Verify GCP Authentication and Project
+    - name: Log in to Google Cloud Artifact Registry
       run: |
-        gcloud auth list
-        gcloud config list project
+        gcloud auth configure-docker "us-central1-docker.pkg.dev" --quiet
 
     - name: Build Docker image
       run: |
