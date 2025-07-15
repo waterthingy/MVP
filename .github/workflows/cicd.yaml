@@ -37,7 +37,7 @@ jobs:
     - name: Deploy to Cloud Run
       run: |
         gcloud run deploy fastapi-app \
-          --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/fastapi-repo/fastapi-app:latest
+          --image us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/fastapi-repo/fastapi-app:latest \
           --region us-central1 \
           --platform managed \
           --allow-unauthenticated \
